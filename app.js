@@ -13,7 +13,7 @@ dbConnect();
 
 const newUser = new users({
     name: 'Dhanshri',
-    email: "dhanshri2@gmail.com",
+    email: "dhanshri4@gmail.com",
     password: "123",
 });
 
@@ -47,5 +47,40 @@ newUser.save()
         console.log("Error finding users", error);
     });
 
+
+
+    // to update the user details - updateOne method take two arguments 1. filter 2. update
+
+users.updateOne({email: 'dhanshri@gmail.com'}, {name: 'Dhanshri Sonwane'})
+    .then((result) => {
+        console.log("User updated successfully", result);
+    })
+    .catch((error) => {
+        console.log("Error updating user", error);
+    });
+
+
+
+// to delete the user details - deleteOne method take one argument filter
+
+users.deleteOne({email: 'dhanshri3@gmail.com'})
+    .then((result) => {
+        console.log("User deleted successfully", result);
+    })
+    .catch((error) => {
+        console.log("Error deleting user", error);
+    });
+
+
+
+// to delete all the users - deleteMany method take one argument filter
+
+// users.deleteMany({isActive: false})
+//     .then((result) => {
+//         console.log("All users deleted successfully", result);
+//     })
+//     .catch((error) => {
+//         console.log("Error deleting users", error);
+//     });
 
 module.exports = app;

@@ -13,7 +13,7 @@ dbConnect();
 
 const newUser = new users({
     name: 'Dhanshri',
-    email: "dhanshri1@gmail.com",
+    email: "dhanshri2@gmail.com",
     password: "123",
 });
 
@@ -23,6 +23,28 @@ newUser.save()
     })
     .catch((error) => {
         console.log(error);
+    });
+
+
+    // to find the user
+
+    // users.find({ email: 'dhanshri@gmail.com'})
+    // .then((result) => {
+    //     console.log("Userr found: ", result);
+    // })
+    // .catch((error) => {
+    //     console.log("Error finding users", error);
+    // });
+
+
+
+    // to find all the users
+    users.find()
+    .then((result) => {
+        console.log("Userr found: ", result);
+    })
+    .catch((error) => {
+        console.log("Error finding users", error);
     });
 
 

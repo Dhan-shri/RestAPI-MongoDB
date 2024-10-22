@@ -13,7 +13,7 @@ dbConnect();
 
 const newUser = new users({
     name: 'Dhanshri',
-    email: "dhanshri4@gmail.com",
+    email: "dhanshri5@gmail.com",
     password: "123",
 });
 
@@ -82,5 +82,20 @@ users.deleteOne({email: 'dhanshri3@gmail.com'})
 //     .catch((error) => {
 //         console.log("Error deleting users", error);
 //     });
+
+
+
+
+//CCOvered Queries
+users.collection.createIndex({email: 5})
+
+users.find({email: 'dhanshri@gmail.com'}).select({email: 5, _id: 0})
+    .then((result) => {
+        console.log("User found: ", result);
+    })
+    .catch((error) => {
+        console.log("Error finding user", error);
+    });
+
 
 module.exports = app;

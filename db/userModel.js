@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 5,
         // maxlength: 255,
-        unique: [true, "Email already exists"]
+        unique: [true, "Email already exists herer"]
     },
     password: {
         type: String,

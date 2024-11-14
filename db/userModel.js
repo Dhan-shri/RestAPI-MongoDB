@@ -25,7 +25,12 @@ const userSchema = new mongoose.Schema({
         required: true,
         // minlength: 5,
         unique: false,
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
+
 });
 
 
